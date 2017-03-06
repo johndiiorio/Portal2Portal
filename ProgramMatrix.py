@@ -3,7 +3,7 @@ import numpy as np
 
 
 class ProgramMatrix:
-    def __init__(self, text, matrix_size=15):
+    def __init__(self, text, matrix_size=100):
         if not self.is_valid(text):
             raise SyntaxError("Unexpected token error")
         try:
