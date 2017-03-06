@@ -24,6 +24,9 @@ class ProgramMatrix:
             s += "\n"
         return s
 
+    def get_symbol(self, col, row):
+        return self.matrix[row, col]
+
     @staticmethod
     def is_valid(text):
         valid_chars = ["<", ">", "+", "-", "|", "{", "}", "(", ")", "[", "]", ".", ",", ":"]

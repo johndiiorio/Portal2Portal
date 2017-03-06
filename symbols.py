@@ -1,7 +1,11 @@
+from tape import Tape
+tape = Tape()
+
+
 class Empty:
     @staticmethod
-    def execute(pointer, matrix):
-        raise NotImplemented
+    def execute():
+        pass
 
     def __str__(self):
         return " "
@@ -9,8 +13,8 @@ class Empty:
 
 class Plus:
     @staticmethod
-    def execute(pointer, matrix):
-        matrix[pointer[0]][pointer[1]] += 1
+    def execute():
+        tape.increment()
 
     def __str__(self):
         return "+"
@@ -18,8 +22,8 @@ class Plus:
 
 class Minus:
     @staticmethod
-    def execute(pointer, matrix):
-        matrix[pointer[0]][pointer[1]] -= 1
+    def execute():
+        tape.decrement()
 
     def __str__(self):
         return "-"
@@ -27,8 +31,8 @@ class Minus:
 
 class Left:
     @staticmethod
-    def execute(pointer):
-        pointer[0] -= 1
+    def execute():
+        tape.step_left()
 
     def __str__(self):
         return "<"
@@ -36,8 +40,8 @@ class Left:
 
 class Right:
     @staticmethod
-    def execute(pointer):
-        pointer[0] += 1
+    def execute():
+        tape.step_right()
 
     def __str__(self):
         return ">"
@@ -45,8 +49,8 @@ class Right:
 
 class Output:
     @staticmethod
-    def execute(pointer, matrix):
-        print(str(chr(matrix[pointer[0]][pointer[1]])))
+    def execute():
+        print(str(chr(tape.get())))
 
     def __str__(self):
         return "."
