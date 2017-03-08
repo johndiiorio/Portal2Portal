@@ -2,7 +2,7 @@ class Tape:
     def __init__(self, size=1000):
         self.size = size
         self.data = [0]*size
-        self.pointer = 0
+        self.pointer = 500
 
     def __str__(self):
         return self.data

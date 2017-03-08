@@ -29,7 +29,7 @@ class ProgramMatrix:
 
     @staticmethod
     def is_valid(text):
-        valid_chars = ["<", ">", "+", "-", "|", "{", "}", "(", ")", "[", "]", ".", ",", ":"]
+        valid_chars = ["<", ">", "+", "-", "|", "(", ")", "[", "]", ".", ",", ":"]
         for i in text:
             if i not in valid_chars and not i.isdigit():
                 return False
@@ -59,8 +59,8 @@ class ProgramMatrix:
                 self.matrix[row][col+col_count] = Output()
                 i += 1
                 col_count += 1
-            elif text[i] == "(" or text[i] == "{":
-                skip = text[i:].index(")") + 1 if text[i] == "(" else text[i:].index("}") + 1
+            elif text[i] == "(" or text[i] == "[":
+                skip = text[i:].index(")") + 1 if text[i] == "(" else text[i:].index("]") + 1
                 x1, y1, x2, y2 = [int(x) for x in text[i+1:i+skip-1].split(",")]
                 momentum = True if text[i] == "(" else False
                 portal_open = Portal(x1, y1, momentum)
