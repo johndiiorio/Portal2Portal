@@ -67,7 +67,7 @@ class Portal:
         self.linked_portal = portal
 
     def execute(self):
-        raise NotImplemented
+        return self if not tape.get() == 0 else None
 
     def __str__(self):
         return "(" if self.momentum else "{"

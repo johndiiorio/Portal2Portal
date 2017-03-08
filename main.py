@@ -5,8 +5,8 @@ from program_executor import ProgramExecutor
 
 if __name__ == "__main__":
     start_time = time.time()
-    text = open('main.p2p', 'r').read().replace(' ', '').replace('\n', '')
+    text = open('code.p2p', 'r').read().replace(' ', '').replace('\n', '')
     matrix = ProgramMatrix(text, 100)
     executor = ProgramExecutor(matrix)
     executor.run()
-    print("--- Program finished in %s seconds ---" % (time.time() - start_time))
+    print("\n--- Program finished in %s seconds ---" % (time.time() - start_time))
